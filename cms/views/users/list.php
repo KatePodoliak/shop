@@ -1,0 +1,25 @@
+<?php
+    $list = $this->ulist;
+?>
+<div class="table-block">
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Login</th>
+                <th>Name</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <?php foreach ($list as $key => $value) { ?>
+            <tr>
+                <td><?= $value['id']?></td>
+                <td><?= $value['login']?></td>
+                <td><?= $value['name']?></td>
+                <td><a href="<?= Controller::formatUrl('UsersController', 'edit', array('id'=>$value['id']))?>">Edit</a></td>
+                <td><a href="<?= Controller::formatUrl('UsersController', 'delete', array('id'=>$value['id']))?>">Delete</a></td>
+            </tr>
+    <?php } ?>
+    </table>
+</div>
